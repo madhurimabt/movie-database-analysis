@@ -1,0 +1,4 @@
+# Overview
+print("Total Ratings:", len(df))
+print("Unique Users:", df['userId'].nunique())
+print("Unique Movies:", df['movieId'].nunique())
