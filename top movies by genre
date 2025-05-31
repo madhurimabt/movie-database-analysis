@@ -1,0 +1,14 @@
+# Split multiple genres
+df_genres = df.copy()
+df_genres['genres'] = df_genres['genres'].str.split('|')
+df_genres = df_genres.explode('genres')
+
+# Group and filter
+genre_group = df_genres.groupby(['genres', 'title']).agg({'rating': ['mean', 'count']})
+genre_group.columns = ['average_rating', 'rating_count']
+genre_group = genre_group[genre_group['rating_count'] >= 30]
+
+# Top 3 movies per genre
+top_by_genre = genre_group.reset_index().sort_values(['genres', 'average_rating'], ascending=[True, False])
+top_by_genre = top_by_genre.groupby('genres').head(3)
+top_by_genre
