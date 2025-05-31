@@ -1,0 +1,7 @@
+# Per user
+user_avg = df.groupby('userId')['rating'].mean().sort_values(ascending=False)
+print("Top 5 users by avg rating:\n", user_avg.head())
+
+# Per movie
+movie_avg = df.groupby('title')['rating'].mean().sort_values(ascending=False)
+print("Top 5 movies by avg rating:\n", movie_avg.head())
