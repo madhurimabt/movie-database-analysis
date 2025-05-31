@@ -1,0 +1,9 @@
+movie_stats = df.groupby('title').agg({'rating': ['mean', 'count']})
+movie_stats.columns = ['average_rating', 'rating_count']
+
+# Filter popular movies
+popular_movies = movie_stats[movie_stats['rating_count'] >= 50]
+
+# Sort by rating
+top_movies = popular_movies.sort_values('average_rating', ascending=False).head(10)
+top_movies
