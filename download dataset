@@ -1,0 +1,3 @@
+# Download MovieLens dataset
+!wget https://files.grouplens.org/datasets/movielens/ml-latest-small.zip
+!unzip -o ml-latest-small.zip
