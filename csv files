@@ -1,0 +1,7 @@
+# Load data
+ratings = pd.read_csv('ml-latest-small/ratings.csv')
+movies = pd.read_csv('ml-latest-small/movies.csv')
+
+# Merge ratings with movie titles
+df = pd.merge(ratings, movies, on='movieId')
+df.head()
