@@ -1,0 +1,6 @@
+# Rating distribution
+sns.histplot(df['rating'], bins=9)
+plt.title('Rating Distribution')
+plt.xlabel('Rating')
+plt.ylabel('Count')
+plt.show()
